@@ -1,0 +1,28 @@
+.bloco{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: black;
+    font-family: Arial;
+}
+
+.li{
+    display: flex;
+    border: 1px solid #ccc;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: 22%;
+    margin: 10px;
+}
+
+.imagem{
+    width: 45%;
+    height: 45%;
+    align-items: center;
+}
+
+.precinho{
+    position: start;
+}
+
