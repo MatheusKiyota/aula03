@@ -1,18 +1,20 @@
- import styles from '../styles/listarProdutos.module.css'
+import styles from '../styles/'
 
-        export default function ListarProdutos({lista}) {
-            return(
-                <>
-                <ul className={styles.bloco}>
-                    {lista.map(produto => (
-                        <li className={styles.li} key={produto.id}>   
-                            <h2>{produto.title}</h2>
-                            <p>{produto.descripition}</p>
-                            <p className={styles.precinho}>Preço: {produto.price}</p>
-                            <img className={styles.imagem} src={produto.image} alt={produto.title} width={200}/>
-                        </li>
-                    ))}
-                    </ul>
-                </>
-            )
-        }       
+export default function ListarProdutos({ lista }) {
+    return (
+        <div className={styles.container}>
+            <ul className={styles.bloco}>
+                {lista.map(produto => (
+                    <li className={styles.li} key={produto.id}>
+                        <img className={styles.foto} src={produto.image} alt={produto.title} />
+                        <div className={styles.content}>
+                            <h2 className={styles.titulo}>{produto.title}</h2>
+                            <p className={styles.valor}>R$ {produto.price}</p>
+                            <button className={styles.botao}>Obter</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
