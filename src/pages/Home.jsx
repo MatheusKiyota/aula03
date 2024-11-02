@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import ListarProdutos from "./ListarProdutos";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Home() {
-
     const [lista, setLista] = useState([]);
 
     useEffect(() => {
-
         const receberListaProdutos = async () => {
             try {
                 const resposta = await fetch('https://fakestoreapi.com/products');
@@ -22,8 +22,11 @@ export default function Home() {
 
     return (
         <>
-            <h1>Lista de Produtos</h1>
-            <ListarProdutos lista={lista}/>
+            <Header />
+            <div className="content">
+                <ListarProdutos lista={lista}/>
+            </div>
+            <Footer />
         </>
     );
 }

@@ -1,4 +1,5 @@
-import styles from '../styles/'
+import styles from '../styles/listarProdutos.module.css';
+
 
 export default function ListarProdutos({ lista }) {
     return (

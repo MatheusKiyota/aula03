@@ -1,73 +1,98 @@
-.container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+/* Fundo do site */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* Fundo cinza escuro */
+    color: #fff; /* Cor de texto padrão */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.bloco {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 220px; /* Largura fixa para manter 4 itens por linha */
-    border: 1px solid #e0e0e0;
-    padding: 15px;
-    background-color: #fff;
-    /* Removido o sombreamento e o efeito de bordas arredondadas */
-}
-
-.foto {
-    width: 100%;
-    height: 200px; /* Altura fixa para manter o formato quadrado */
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
+/* Container para alinhar o conteúdo */
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container principal da lista de produtos */
+.container {
+    display: flex;
+    justify-content: center; /* Centralizar os produtos */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limite de largura */
+    margin: 0 auto; /* Centraliza o container na página */
+    box-sizing: border-box;
+}
+
+/* Bloco de lista de produtos */
+.bloco {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo do item do produto */
+.li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    padding: 15px;
+    background-color: #2a2a2a; /* Fundo cinza escuro para o item */
+    border: 1px solid #333;
+}
+
+/* Imagem do produto */
+.foto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Conteúdo do produto */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
+/* Título do produto */
 .titulo {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #ddd;
     text-align: center;
     margin: 5px 0;
 }
 
+/* Preço do produto */
 .valor {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color: #555;
+    color: #bbb;
     text-align: center;
     margin-bottom: 10px;
 }
 
+/* Botão */
 .botao {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     transition: background-color 0.2s;
-    width: 100%; /* Largura total do bloco */
+    width: 100%; /* Largura total do item */
     text-align: center;
 }
 
 .botao:hover {
-    background-color: #333; /* Escurece um pouco o botão ao passar o mouse */
+    background-color: #555; /* Cor mais clara ao passar o mouse */
 }
