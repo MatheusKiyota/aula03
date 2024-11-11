@@ -1,7 +1,12 @@
 import styles from '../styles/listarProdutos.module.css';
-
+import Loading from './Loading';
 
 export default function ListarProdutos({ lista }) {
+    
+    if (lista.length === 0) {
+        return <Loading />;
+    }
+
     return (
         <div className={styles.container}>
             <ul className={styles.bloco}>
