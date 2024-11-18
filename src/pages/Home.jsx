@@ -21,14 +21,39 @@ export default function Home() {
         receberListaProdutos();
     }, []);
 
-   
+
+    const orderAz = () => {
+        const listaOrdenada = [...lista].sort((a, b) => a.title.localeCompare(b.title));
+        setLista(listaOrdenada);
+    };
+
+    const orderZa = () => {
+        const listaOrdenada = [...lista].sort((a, b) => b.title.localeCompare(a.title));
+        setLista(listaOrdenada);
+    };
+
+    const orderMenorMaior = () => {
+        const listaOrdenada = [...lista].sort((a, b) => a.price - b.price);
+        setLista(listaOrdenada);
+    };
+
+
+    const orderMaiorMenor = () => {
+        const listaOrdenada = [...lista].sort((a, b) => b.price - a.price);
+        setLista(listaOrdenada);
+    };
+
+  
 
     return (
         <>
             <Header />
+            <Filtros />
+
             <div className="content">
                 <ListarProdutos lista={lista} />
             </div>
+            
             <Footer />
         </>
     );
