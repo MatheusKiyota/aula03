@@ -1,8 +1,7 @@
-import styles from '../styles/listarProdutos.module.css';
-import Loading from './Loading';
+import styles from "../styles/listarProdutos.module.css";
+import Loading from "./Loading";
 
 export default function ListarProdutos({ lista }) {
-    
     if (lista.length === 0) {
         return <Loading />;
     }
@@ -10,7 +9,7 @@ export default function ListarProdutos({ lista }) {
     return (
         <div className={styles.container}>
             <ul className={styles.bloco}>
-                {lista.map(produto => (
+                {lista.map((produto) => (
                     <li className={styles.li} key={produto.id}>
                         <img className={styles.foto} src={produto.image} alt={produto.title} />
                         <div className={styles.content}>
