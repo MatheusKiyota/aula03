@@ -1,11 +1,17 @@
 import React from "react";
 import styles from "../styles/header.module.css";
 
-export default function Header({ showFilters, toggleFilters, orderAz, orderZa, orderMenorMaior, orderMaiorMenor }) {
+export default function Header({ showFilters, toggleFilters, orderAz, orderZa, orderMenorMaior, orderMaiorMenor, buscaProdutos }) {
     return (
         <header className={styles.header}>
             <div className={styles.leftSection}>
                 <h1 className={styles.title}>Meu Site de Produtos</h1>
+                <input
+                    type="text"
+                    placeholder="Buscar"
+                    className={styles.searchBar}
+                    onChange={(e) => buscaProdutos(e.target.value)} 
+                />
             </div>
             <nav className={styles.nav}>
                 <a href="#" className={styles.filterButton} onClick={toggleFilters}>
@@ -22,6 +28,8 @@ export default function Header({ showFilters, toggleFilters, orderAz, orderZa, o
                 <a href="#" className={styles.link}>Home</a>
                 <a href="#" className={styles.link}>Produtos</a>
                 <a href="#" className={styles.link}>Ofertas</a>
+
+              
             </nav>
         </header>
     );

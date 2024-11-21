@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default function Home() {
     const [lista, setLista] = useState([]);
-    const [showFilters, setShowFilters] = useState(false);  // Estado para controlar a visibilidade dos filtros
+    const [showFilters, setShowFilters] = useState(false);  
 
     useEffect(() => {
         const receberListaProdutos = async () => {
@@ -20,24 +20,31 @@ export default function Home() {
         receberListaProdutos();
     }, []);
 
-    // Funções de ordenação
+    
     const orderAz = () => setLista([...lista].sort((a, b) => a.title.localeCompare(b.title)));
     const orderZa = () => setLista([...lista].sort((a, b) => b.title.localeCompare(a.title)));
     const orderMenorMaior = () => setLista([...lista].sort((a, b) => a.price - b.price));
     const orderMaiorMenor = () => setLista([...lista].sort((a, b) => b.price - a.price));
-
-    // Função para alternar a visibilidade dos filtros
     const toggleFilters = () => setShowFilters(prevState => !prevState);
+
+  
+    const buscaProdutos = (query) => {
+        const listaFiltrada = lista.filter(produto =>
+            produto.title.toLowerCase().includes(query.toLowerCase())
+        );
+        setLista(listaFiltrada);
+    };
 
     return (
         <>
             <Header
-                showFilters={showFilters} // Passa o estado de visibilidade para o Header
-                toggleFilters={toggleFilters} // Passa a função que alterna o estado
+                showFilters={showFilters} 
+                toggleFilters={toggleFilters} 
                 orderAz={orderAz}
                 orderZa={orderZa}
                 orderMenorMaior={orderMenorMaior}
                 orderMaiorMenor={orderMaiorMenor}
+                buscaProdutos={buscaProdutos} 
             />
             <div className="content">
                 <ListarProdutos lista={lista} />

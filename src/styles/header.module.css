@@ -79,3 +79,20 @@
 .filterList li:hover {
     background-color: #555;
 }
+
+.searchBar {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px; 
+    background-color: white;
+    color: #333;
+    margin-left: 20px;
+    transition: border-color 0.2s;
+}
+
+.searchBar:focus {
+    border-color: #888;
+    outline: none;
+}
